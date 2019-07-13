@@ -1,10 +1,26 @@
 <!DOCTYPE html>
 <html>
-<title>Pipe Headloss Calculation</title>
 <body>
+<h1 Using the Darcy–Weisbach equation
 
-<h1>Using the Darcy–Weisbach equation </h1>
-<p>In fluid dynamics, the Darcy–Weisbach equation is an empirical equation, which relates the head loss, or pressure loss, due to friction along a given length of pipe to the average velocity of the fluid flow for an incompressible fluid</p>
+Select your Pipe type:
+<select id="mySelect">
+  <option value="steel">1</option>
+  <option value="PVC">2</option>
+  <option value="HDPE">3</option>
+  <option value="Cast Iron">4</option>
+</select>
+
+<p>Click the button to return the value of the selected fruit.</p>
+
+<button type="button" onclick="myFunction()">Try it</button>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("mySelect").selectedIndex;
+  alert(document.getElementsByTagName("option")[x].value);
+}
+</script>
 
 </body>
 </html>
