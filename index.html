@@ -8,19 +8,24 @@
 
 <p>
   <label>Pipe diameter</label>
-  <input id="inputFahrenheit" type="number" placeholder="m" oninput="temperatureConverter(this.value)" onchange="temperatureConverter(this.value)">
+  <input id="inputFahrenheit" type="number" placeholder="m" oninput="ductArea(this.value)" 
+onchange="ductArea(this.value)">
 </p>
 
 <p>
-  <label>Pipe diameter</label>
-  <input id="inputFahrenheit" type="number" placeholder="m" oninput="temperatureConverter(this.value)" onchange="temperatureConverter(this.value)">
+  <label>Fluid velocity</label>
+  <input id="inputFahrenheit" type="number" placeholder="m/s" oninput="temperatureConverter(this.value)" onchange="temperatureConverter(this.value)">
 </p>
 <p>Duct Area: <span id="outputCelcius"></span></p>
 
+</p>
+<p>Flow rate: <span id="outputCelcius"></span></p>
+
 <script>
-function temperatureConverter(valNum) {
-  valNum = parseFloat(valNum);
-  document.getElementById("outputCelcius").innerHTML=(valNum-32)/1.8;
+function ductArea(valNum) {
+  //valNum = parseFloat(valNum);
+  document.getElementById("outputCelcius").innerHTML=(3.14*(valNum^2))/4; // this is calculating wrong for some reason. 
+                                                                            // check it with a calculator.
 }
 </script>
 
