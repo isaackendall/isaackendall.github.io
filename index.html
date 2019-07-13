@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html>
-<h1> Darcy-Weisbach headloss </h1>  
+<title>Darcy-Weisbach headloss</title>
 <body>
 
-Select your Pipe type:
-<select id="mySelect">
-  <option value=1>Steel</option>
-  <option value=2>PVC</option>
-  <option value=3>HDPE</option>
-  <option value=4>Cast Iron</option>
-</select>
+<h2>Darcy-Weisbach headloss</h2>
+<p>Enter the values below to calculate the head loss:</p>
 
-<p>Click the button to return the value of the selected fruit.</p>
+<p>
+  <label>Pipe diameter</label>
+  <input id="inputFahrenheit" type="number" placeholder="m" oninput="temperatureConverter(this.value)" onchange="temperatureConverter(this.value)">
+</p>
 
-<button type="button" onclick="myFunction()">Try it</button>
+<p>
+  <label>Pipe diameter</label>
+  <input id="inputFahrenheit" type="number" placeholder="m" oninput="temperatureConverter(this.value)" onchange="temperatureConverter(this.value)">
+</p>
+<p>Duct Area: <span id="outputCelcius"></span></p>
 
 <script>
-function myFunction() {
-  var x = document.getElementById("mySelect").selectedIndex;
-  alert(document.getElementsByTagName("option")[x].value);
+function temperatureConverter(valNum) {
+  valNum = parseFloat(valNum);
+  document.getElementById("outputCelcius").innerHTML=(valNum-32)/1.8;
 }
 </script>
 
