@@ -11,15 +11,37 @@
     <label>Diameter</label>
     <input id="inputArea" type="number" placeholder="Diameter (m)" oninput="area(this.value)" onchange="area(this.value)">
   </p>
+
+  <p>
+      <label>Velocity</label>
+      <input id="inputVelocity" type="number" placeholder="Velocity (m/s)" oninput="flowRate(this.value)" onchange="flowRate(this.value)">
+    </p>
+
+
   <p>Area: <span id="outputArea"></span></p>
+  <p>Flow rate (m3/2): <span id="outputFlowRate"></span></p>
   
   <script>
+
   function area(valNum) {
     valNum = parseFloat(valNum);
     var radius = valNum/2;
-    var area = Math.PI * radius * radius; 
+    area = Math.PI * radius * radius; //global variable. This allows it to be passed into the flowrate funtion
     document.getElementById("outputArea").innerHTML=area;
+
   }
+  </script>
+
+  <script>
+  
+  function flowRate(valNum) {
+    valNum = parseFloat(valNum);
+    var velocity = valNum;
+    var flowRate = velocity * area;
+    document.getElementById("outputFlowRate").innerHTML=flowRate;
+    
+  }
+
   </script>
   
   </body>
