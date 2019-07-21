@@ -8,17 +8,30 @@
 <p>Type a value in the Diameter field to convert the value to pipe area:</p>
 
 <p>
+  <label>Moody Friction Factor, f:</label>
+  <input id="inputArea" type="number" placeholder="Friction (f)" oninput="area(this.value)" onchange="area(this.value)">
+</p>
+
+<p>
+  <label>Duct Length, L (m):</label>
+  <input id="inputArea" type="number" placeholder="Length (m)" oninput="area(this.value)" onchange="area(this.value)">
+</p>
+
+<p>
     <label>Diameter</label>
     <input id="inputArea" type="number" placeholder="Diameter (m)" oninput="area(this.value)" onchange="area(this.value)">
   </p>
 
-  <p>
+  <p>Area: <span id="outputArea"></span></p>
+
+
+<p>
       <label>Velocity</label>
       <input id="inputVelocity" type="number" placeholder="Velocity (m/s)" oninput="flowRate(this.value)" onchange="flowRate(this.value)">
     </p>
 
 
-  <p>Area: <span id="outputArea"></span></p>
+  
   <p>Flow rate (m3/2): <span id="outputFlowRate"></span></p>
   
   <script>
