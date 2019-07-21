@@ -1,62 +1,51 @@
 <!DOCTYPE html>
 <html>
+<title>Darcy-Weisbach headloss</title>
 <title>Darcy-Weisbach headloss calculation</title>
 <body>
 
 <h2>Darcy-Weisbach headloss</h2>
+<p>Enter the values below to calculate the head loss:</p>
 
+<p>
+  <label>Pipe diameter</label>
+  <input id="inputFahrenheit" type="number" placeholder="m" oninput="ductArea(this.value)" 
+onchange="ductArea(this.value)">
+</p>
 <p>Type a value in the Diameter field to convert the value to pipe area:</p>
 
 <p>
-  <label>Moody Friction Factor, f:</label>
-  <input id="inputArea" type="number" placeholder="Friction (f)" oninput="area(this.value)" onchange="area(this.value)">
+  <label>Fluid velocity</label>
+  <input id="inputFahrenheit" type="number" placeholder="m/s" oninput="temperatureConverter(this.value)" onchange="temperatureConverter(this.value)">
 </p>
+<p>Duct Area: <span id="outputCelcius"></span></p>
 
-<p>
-  <label>Duct Length, L (m):</label>
-  <input id="inputArea" type="number" placeholder="Length (m)" oninput="area(this.value)" onchange="area(this.value)">
 </p>
+<p>Flow rate: <span id="outputCelcius"></span></p>
 
-<p>
+<script>
+function ductArea(valNum) {
+  //valNum = parseFloat(valNum);
+  document.getElementById("outputCelcius").innerHTML=(3.14*(valNum^2))/4; // this is calculating wrong for some reason. 
+                                                                            // check it with a calculator.
+}
+</script>
+
+</body>
+</html>
     <label>Diameter</label>
     <input id="inputArea" type="number" placeholder="Diameter (m)" oninput="area(this.value)" onchange="area(this.value)">
   </p>
-
   <p>Area: <span id="outputArea"></span></p>
 
-
-<p>
-      <label>Velocity</label>
-      <input id="inputVelocity" type="number" placeholder="Velocity (m/s)" oninput="flowRate(this.value)" onchange="flowRate(this.value)">
-    </p>
-
-
-  
-  <p>Flow rate (m3/2): <span id="outputFlowRate"></span></p>
-  
   <script>
-
   function area(valNum) {
     valNum = parseFloat(valNum);
     var radius = valNum/2;
-    area = Math.PI * radius * radius; //global variable. This allows it to be passed into the flowrate funtion
+    var area = Math.PI * radius * radius; 
     document.getElementById("outputArea").innerHTML=area;
-
   }
   </script>
 
-  <script>
-  
-  function flowRate(valNum) {
-    valNum = parseFloat(valNum);
-    var velocity = valNum;
-    var flowRate = velocity * area;
-    document.getElementById("outputFlowRate").innerHTML=flowRate;
-    
-  }
-
-  </script>
-  
   </body>
   </html>
-  
