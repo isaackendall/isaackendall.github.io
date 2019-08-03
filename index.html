@@ -15,7 +15,7 @@
 
 <p>
     <label>Diameter</label>
-    <input id="inputArea" type="number" placeholder="Diameter (m)" oninput="diameter(this.value)" onchange="diameter(this.value)">
+    <input id="inputArea" type="number" placeholder="Diameter (m)" oninput="area(this.value)" onchange="area(this.value)">
   </p>
 
   <p>
@@ -26,21 +26,21 @@
 
   <p>Area: <span id="outputArea"></span></p>
   <p>Flow rate (m3/2): <span id="outputFlowRate"></span></p>
-  <p>Duct Perimeter: <span id="ductPerimeter"></span></p>
+  <p>Duct Perimeter: <span id="outputDuctPerimeter"></span></p>
   
   <script>
 
-  function diameter(diameter) { // this function takes the input of " oninput="diameter(this.value)"
-    var radius = diameter/2;
+  function area(diameter) { // this function takes the input of " oninput="diameter(this.value)"
+    radius = diameter/2; // global variable.
     area = Math.PI * radius * radius; //global variable. This allows it to be passed into the flowrate function
     document.getElementById("outputArea").innerHTML=area;
 
   }
   
-  function flowRate(number) {
+  function flowRate(number) { 
     number = parseFloat(number); // creates a floating point number, so 
     // not to create a number with endless decimals
-    var velocity = number;
+    var velocity = number; // takes the velocity number and asigns it to number
     //var area = Math.PI * radius * radius;
     var flowRate = velocity * area;
     document.getElementById("outputFlowRate").innerHTML=flowRate;
@@ -49,7 +49,9 @@
 /*
   function ductPerimeter(diameter) {
 
-    var ductPerimeter = 
+    var ductPerimeter =  ;
+    //var ductPerimeter =  2 * Math.PI * radius;
+     document.getElementById("outputDuctPerimeter").innerHTML=ductPerimeter;
   }
 */
   </script>
