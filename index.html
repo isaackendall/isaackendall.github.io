@@ -30,10 +30,13 @@
   
   <script>
 
-  function area(diameter) { // this function takes the input of " oninput="diameter(this.value)"
-    radius = diameter/2; // global variable.
+  function area(diameter) { // this function takes the input of " oninput="area(this.value)"
+    diameter = parseFloat(diameter); // creates a floating point number, so 
+    // not to create a number with endless decimals
+    var radius = diameter/2; // local variable.
     area = Math.PI * radius * radius; //global variable. This allows it to be passed into the flowrate function
     document.getElementById("outputArea").innerHTML=area;
+    //document.getElementById("outputDuctPerimeter").innerHTML=1;
 
   }
   
@@ -46,14 +49,15 @@
     document.getElementById("outputFlowRate").innerHTML=flowRate;
     
   }
-/*
-  function ductPerimeter(diameter) {
+//function area(diameter) {
+  //var ductPerimeter = diameter;
+//}
+var ductPerimeter = velocity;
+  document.getElementById("outputDuctPerimeter").innerHTML=ductPerimeter;
+  
 
-    var ductPerimeter =  ;
-    //var ductPerimeter =  2 * Math.PI * radius;
-     document.getElementById("outputDuctPerimeter").innerHTML=ductPerimeter;
-  }
-*/
+  //}
+
   </script>
   
   </body>
