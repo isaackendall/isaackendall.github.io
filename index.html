@@ -1,65 +1,9 @@
 <!DOCTYPE html>
 <html>
-<title>Darcy-Weisbach headloss calculation</title>
 <body>
 
-<h2>Darcy-Weisbach headloss</h2>
+<h2>HTML Links</h2>
+<p><a href="https://www.w3schools.com/html/">Visit our HTML tutorial</a></p>
 
-<p>Type a value in the Diameter field to convert the value to pipe area:</p>
-
-<p>
-  <label>Length</label>
-  <input id="inputLength" type="number" placeholder="Length (m)" oninput="length(this.value)" onchange="length(this.value)">
-</p>
-
-
-<p>
-    <label>Diameter</label>
-    <input id="inputArea" type="number" placeholder="Diameter (m)" oninput="area(this.value)" onchange="area(this.value)">
-  </p>
-
-  <p>
-      <label>Velocity</label>
-      <input id="inputVelocity" type="number" placeholder="Velocity (m/s)" oninput="flowRate(this.value)" onchange="flowRate(this.value)">
-    </p>
-
-
-  <p>Area: <span id="outputArea"></span></p>
-  <p>Flow rate (m3/2): <span id="outputFlowRate"></span></p>
-  <p>Duct Perimeter: <span id="outputDuctPerimeter"></span></p>
-  
-  <script>
-
-  function area(diameter) { // this function takes the input of " oninput="area(this.value)"
-    diameter = parseFloat(diameter); // creates a floating point number, so 
-    // not to create a number with endless decimals
-    var radius = diameter/2; // local variable.
-    area = Math.PI * radius * radius; //global variable. This allows it to be passed into the flowrate function
-    document.getElementById("outputArea").innerHTML=area;
-    //document.getElementById("outputDuctPerimeter").innerHTML=1;
-
-  }
-  
-  function flowRate(number) { 
-    number = parseFloat(number); // creates a floating point number, so 
-    // not to create a number with endless decimals
-    var velocity = number; // takes the velocity number and asigns it to number
-    //var area = Math.PI * radius * radius;
-    var flowRate = velocity * area;
-    document.getElementById("outputFlowRate").innerHTML=flowRate;
-    
-  }
-//function area(diameter) {
-  //var ductPerimeter = diameter;
-//}
-var ductPerimeter = velocity;
-  document.getElementById("outputDuctPerimeter").innerHTML=ductPerimeter;
-  
-
-  //}
-
-  </script>
-  
-  </body>
-  </html>
-  
+</body>
+</html>
