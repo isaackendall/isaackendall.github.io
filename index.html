@@ -2,32 +2,34 @@
 <html>
 <title>Estimate the cost of your project</title>
 <body>
-
-<p>Type the estimated square footage of your project</p>
-
+  <div align="center">
+<p>Type the estimated square footage of your project. <br>
+Please include all the areas that need to be surveyed, <br>
+for example, garage, deck, patios and attics should be included.</p>
+  
 <p>
   <label>Square Footage</label>
   <input id="inputFahrenheit" type="number" placeholder="Square Footage" oninput="priceCal(this.value)" onchange="priceCal(this.value)">
 </p>
-<p>Price: <span id="price"></span></p>
 
+<p>Price: <span id="price"></span></p>
+</div>
 <script>
 function priceCal(valNum) {
-  valNum = parseFloat(valNum);
-    
-  document.getElementById("price").innerHTML = Math.round((valNum-32)/1.8);
+
+var cost;
+
+if (valNum >= 2000) {
+ cost = valNum * 1;  
+} else {
+  cost = 2000;
+}
+cost = cost.toLocaleString('en-US');
+cost = "$"+cost;
+
+  document.getElementById("price").innerHTML = cost;
 }
 
-/*
-var time = new Date().getHours();
-var greeting;
-if (time < 20) {
-  greeting = "Good day";
-} else {
-  greeting = "Good evening";
-}
-document.getElementById("demo").innerHTML = greeting;
-*/
 </script>
 
 </body>
