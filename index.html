@@ -1,9 +1,35 @@
 <!DOCTYPE html>
 <html>
+<title>Estimate the cost of your project</title>
 <body>
 
-<h2>HTML Links</h2>
-<p><a href="https://www.w3schools.com/html/">Visit our HTML tutorial</a></p>
+<p>Type the estimated square footage of your project</p>
+
+<p>
+  <label>Square Footage</label>
+  <input id="inputFahrenheit" type="number" placeholder="Square Footage" oninput="priceCal(this.value)" onchange="priceCal(this.value)">
+</p>
+<p>Price: <span id="price"></span></p>
+
+<script>
+function priceCal(valNum) {
+  valNum = parseFloat(valNum);
+    
+  document.getElementById("price").innerHTML = Math.round((valNum-32)/1.8);
+}
+
+/*
+var time = new Date().getHours();
+var greeting;
+if (time < 20) {
+  greeting = "Good day";
+} else {
+  greeting = "Good evening";
+}
+document.getElementById("demo").innerHTML = greeting;
+*/
+</script>
 
 </body>
 </html>
+
